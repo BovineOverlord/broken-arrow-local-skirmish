@@ -16,11 +16,16 @@ lobby, no anti-cheat, no network required.
 2. Double-click **`install.bat`**.
 
 The installer finds your Broken Arrow install, **downloads and installs MelonLoader v0.7.3 for you** if it
-isn't already there, copies the mod into `Mods\`, and adds a **"Broken Arrow (Modded)"** desktop shortcut.
+isn't already there, copies the mod into `Mods\`, writes `steam_appid.txt` + a Steam-aware launcher, and adds
+a **"Broken Arrow (Modded)"** desktop shortcut.
 
-Launch the game with that desktop shortcut (not the Steam Play button, which runs EasyAntiCheat and blocks
-mods), then click **Skirmish**.
+**Make sure Steam is running and signed in**, then launch the game with that desktop shortcut (not the Steam
+Play button, which runs EasyAntiCheat and blocks mods), then click **Skirmish**.
 
+> **Steam must be running.** The shortcut starts the game with anti-cheat off but still with a Steam context.
+> Without it (e.g. Steam closed, or launching the raw exe on a fresh install) the game hangs at the
+> "Loading Hangar" screen. The launcher makes sure Steam is up first.
+>
 > The first modded launch is slower because MelonLoader sets itself up once. A black MelonLoader console
 > window opening alongside the game is normal.
 
@@ -43,6 +48,12 @@ battle to play in, so if you want custom stats, install both.)
 ## Limits
 
 - **Offline only.** It does not create real online lobbies with a modded client.
+- **Which maps.** The panel lists the maps that can be played vs AI offline: the built-in **PvE / co-op**
+  scenarios and **campaign** missions (plus any Workshop co-op scenarios you've installed). Plain multiplayer
+  / `*_Skirmish` maps are **not** listed — they ship with empty player slots that only the online lobby fills,
+  so they can't be populated with an army + AI offline. Many MP terrains do have a PvE version that *is* listed
+  (Kaliningrad, Narva, Daugavpils, Ignalina, Coal Mountain, River, Ruda, Klaipeda, Parnu, Baltiysk, Refinery).
+  To play a specific MP terrain vs AI, make a PvE scenario on it in the in-game mission editor and it'll appear.
 - Difficulty and the map's options are honoured. Your first valid deck for the map is preselected, and you
   can change it in the panel.
 
